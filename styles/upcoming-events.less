@@ -1,0 +1,120 @@
+@import 'ui-variables';
+
+.column-UpcomingEventsSidebar {
+  background-color: @background-secondary;
+  border-left: 1px solid @border-color-divider;
+  overflow: hidden;
+  .flexbox-handle-horizontal div {
+    border-right: 0;
+    width: 1px;
+  }
+}
+
+.upcoming-events-sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: @text-color;
+
+  .upcoming-events-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 12px 8px;
+    border-bottom: 1px solid @border-color-divider;
+
+    h2 {
+      margin: 0;
+      font-size: @font-size-base;
+      font-weight: @font-weight-semi-bold;
+    }
+  }
+
+  .upcoming-events-scroll-region {
+    flex: 1;
+  }
+
+  .upcoming-events-day {
+    padding: 0 6px 8px;
+  }
+
+  .upcoming-events-day-header {
+    margin: 0;
+    padding: 12px 6px 4px;
+    font-size: @font-size-smaller;
+    font-weight: @font-weight-semi-bold;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: @text-color-subtle;
+  }
+
+  .upcoming-event {
+    display: flex;
+    align-items: stretch;
+    padding: 6px;
+    border-radius: 4px;
+    cursor: default;
+
+    &:hover {
+      background: fade(@text-color, 5%);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px @component-active-color inset;
+    }
+
+    &.cancelled,
+    &.pending {
+      opacity: 0.6;
+    }
+
+    &.in-progress .upcoming-event-title {
+      font-weight: @font-weight-semi-bold;
+    }
+  }
+
+  .upcoming-event-color-bar {
+    flex-shrink: 0;
+    width: 3px;
+    margin-right: 8px;
+    border-radius: 2px;
+  }
+
+  .upcoming-event-details {
+    min-width: 0;
+  }
+
+  .upcoming-event-title,
+  .upcoming-event-time,
+  .upcoming-event-location {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .upcoming-event-time,
+  .upcoming-event-location {
+    font-size: @font-size-smaller;
+    color: @text-color-subtle;
+  }
+
+  .upcoming-event-now {
+    margin-left: 6px;
+    padding: 0 5px;
+    border-radius: 3px;
+    background: @component-active-color;
+    color: @text-color-inverse;
+    font-size: 0.85em;
+  }
+
+  .upcoming-events-empty {
+    padding: 24px 12px;
+    text-align: center;
+    color: @text-color-very-subtle;
+  }
+}
+
+.btn-toolbar.upcoming-events-toggle.active img.content-mask {
+  background-color: @component-active-color;
+}

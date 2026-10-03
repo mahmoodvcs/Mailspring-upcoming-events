@@ -1,0 +1,30 @@
+{
+  "name": "upcoming-events",
+  "version": "0.1.0",
+  "description": "Shows your upcoming calendar events in a sidebar beside your mail",
+  "main": "./lib/main",
+  "license": "GPL-3.0",
+  "private": true,
+  "engines": {
+    "mailspring": ">=1.26.0"
+  },
+  "windowTypes": {
+    "default": true
+  },
+  "syncInit": true,
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch",
+    "typecheck": "tsc --noEmit",
+    "install-plugin": "node scripts/build.mjs && node scripts/install.mjs",
+    "install-plugin:dev": "node scripts/build.mjs && node scripts/install.mjs --dev"
+  },
+  "dependencies": {
+    "ical-expander": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "esbuild": "^0.25.0",
+    "typescript": "5.7.3"
+  }
+}
